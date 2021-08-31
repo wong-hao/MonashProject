@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<system-libraries>
+    <library path="D:/Software/glassfish-5.0/glassfish5/glassfish/modules/weld-osgi-bundle.jar" source="C:/Users/Xuxuyoyo/.m2/repository/org/jboss/weld/weld-osgi-bundle/3.0.0.Final/weld-osgi-bundle-3.0.0.Final-sources.jar"/>
+</system-libraries>

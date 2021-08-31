@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+ <h:head>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+        <title>Manage Organisation</title> 
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-brand">
+                  Manage Organisation Type
+                </div>
+            </div>
+
+            <h:form id="MyForm">
+                <table class="table table-bordered table-striped">
+                    <!-- For each property in properties ArrayList... --> 
+                    <tr>
+                            <td> 
+                                <h:outputLabel id="Id" value="Id"  />
+                            </td>
+                            <td> 
+                                <h:outputLabel id="Organisation" value="Organisation Type"  />
+                            </td>
+          
+                            
+                     </tr>
+                     
+                     <ui:repeat id="Myrepeat" value="#{customerApplication.organisation}"  var="user" varStatus="status"> 
+                        
+                        <tr> 
+                            <td>
+                                <h:outputText value="#{customerApplication.organisation.get(status.index).organisationId}" id="userID" /> 
+                                
+                            </td>
+                            
+                            <td> 
+                                <h:outputText id="outName" value="#{customerApplication.organisation.get(status.index).typeName}"  />
+                            </td>
+   
+                          <td>
+                                
+                                <h:link value="Edit |" outcome="/admin/editOrganisation">
+
+                                  <f:param name="organisationID" value="#{status.index + 1}"/>
+                                </h:link>
+
+                                <h:commandLink value="Delete" action="#{removeOrganisation.removeOrganisation(customerApplication.organisation.get(status.index).organisationId)}" disabled="#{customerApplication.organisation.get(status.index).organisationId == null}">
+                                </h:commandLink>
+                    
+                            </td>
+                            
+                        </tr> 
+
+                    </ui:repeat>
+                    
+                </table> 
+                  
+                  <h:commandButton id="add" value="Add Organisation Type" action="/admin/addOrganisation" class="btn btn-primary" />
+                        
+                  <h:link id="close" value="Close" outcome="/admin/backend" class="btn btn-primary" > </h:link>
+   
+               
+            </h:form>
+        </div>
+    </h:body>
+
+</html>
+
+<!--   -->
+

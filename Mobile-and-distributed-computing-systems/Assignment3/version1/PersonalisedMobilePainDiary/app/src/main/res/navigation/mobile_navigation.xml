@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/dailyFragment"
+        android:name="com.example.personalisedmobilepaindiary.Fragment.DailyFragment"
+        android:label="fragment_daily"
+        tools:layout="@layout/fragment_daily" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.personalisedmobilepaindiary.Fragment.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/painFragment"
+        android:name="com.example.personalisedmobilepaindiary.Fragment.PainFragment"
+        android:label="fragment_pain"
+        tools:layout="@layout/fragment_pain" />
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.example.personalisedmobilepaindiary.Fragment.ReportsFragment"
+        android:label="fragment_reports"
+        tools:layout="@layout/fragment_reports" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.personalisedmobilepaindiary.Fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="star">
+    <item>火星</item>
+    <item>水星</item>
+</string-array>
+</resources>

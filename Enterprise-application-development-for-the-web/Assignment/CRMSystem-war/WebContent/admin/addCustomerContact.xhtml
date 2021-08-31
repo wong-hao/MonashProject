@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>#{titleController.pageTitle}</title>
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">#{titleController.pageTitle} - Add
+				CustomerContact</div>
+		</div>
+		<div>
+			<f:view>
+				<h:form>
+					<h1>
+						<h:outputText value="Create" />
+					</h1>
+
+					<table class="table table-bordered ">
+
+						<tr class="#{!contactName.valid ? 'has-error' : 'none'}">
+							<td width="200"><h:outputLabel value="contactName"
+									for="contactName" /></td>
+							<td><h:inputText id="ContactName"
+									value="#{AddCustomerContact.customerContact.contactName}" title="ContactName"
+									required="true"
+									requiredMessage="Please enter the Contact Name!"									
+									pt:placeholder=" "/>									
+								  <br /> <h:message for="contactName"
+									class="#{!contactName.valid ? 'label label-warning' : 'none'}" />
+							</td>
+						</tr>
+
+						<tr class="#{!contactPhone.valid ? 'has-error' : 'none'}">
+							<td><h:outputLabel value="contactPhone" for="contactPhone" />
+							</td>
+							<td><h:inputText id="contactPhone"
+									value="#{AddCustomerContact.customerContact.contactPhone}" title="contactPhone"
+									required="true"
+									requiredMessage="Please enter the Contact Phone!"
+									validatorMessage="The office phone number must be less than 10 digits."
+									converterMessage="Please enter a number" pt:placeholder="">
+									<f:convertNumber integerOnly="true" />
+									<f:validateLongRange minimum="1" maximum="9999999999" />
+								    </h:inputText> <br /> <h:message for="contactPhone"
+									class="#{!contactPhone.valid ? 'label label-warning' : 'none'}" />
+							</td>
+
+						</tr>
+
+						
+						<tr class="#{!email.valid ? 'has-error' : 'none'}">
+							<td><h:outputLabel value="email" for="email" /></td>
+							<td><h:inputText id="email" value="#{AddCustomerContact.customerContact.contactEmail}"
+									title="email" required="true"
+									requiredMessage="Please enter the email" />  <br /> <h:message
+									for="email"
+									class="#{!email.valid ? 'label label-warning' : 'none'}" /></td>
+
+						</tr>
+
+						<tr class="#{!position.valid ? 'has-error' : 'none'}">
+							<td><h:outputLabel value="position" for="position" /></td>
+							<td><h:inputText id="position" value="#{AddCustomerContact.customerContact.position}"
+									title="position"  required="true"
+									requiredMessage="Please enter the position!" pt:placeholder=" " />
+								<br /> <h:message for="position"
+									class="#{!position.valid ? 'label label-warning' : 'none'}" /></td>
+
+						
+
+
+						</tr>
+						<tr class="#{!gender.valid ? 'has-error' : 'none'}">						
+							<td><h:outputLabel value="gender" for="gender" /></td>
+							<td><h:inputText id="gender" value="#{AddCustomerContact.customerContact.gender}"
+									title="gender" required="true"
+									requiredMessage="Please enter the gender name"/>									
+								 <br /> <h:message for="gender"
+									class="#{!gender.valid ? 'label label-warning' : 'none'}" /></td>
+
+						</tr>
+
+						<tr class="#{!customerId.valid ? 'has-error' : 'none'}">						
+							<td><h:outputLabel value="customerId" for="customerId" /></td>
+							<td><h:inputText id="customerId" value="#{AddCustomerContact.customerId}"
+									title="customerId" required="true"
+									requiredMessage="Please enter the customerId "/>									
+								 <br /> <h:message for="customerId"
+									class="#{!customerId.valid ? 'label label-warning' : 'none'}" /></td>
+						</tr>
+						
+
+					</table>
+
+					
+					
+					<h:commandButton id="submit" value="Submit"
+						action="#{AddCustomerContact.addCustomerContactInfor()}"
+						class="btn btn-primary">
+						
+					</h:commandButton>
+					
+					<h:link id="close" value="Close" outcome="index.xhtml"
+						class="btn btn-primary" />
+
+				</h:form>
+
+			</f:view>
+		</div>
+	</div>
+
+</h:body>
+</html>

@@ -1,0 +1,3 @@
+include ':app:mvplibrary'
+include ':app'
+rootProject.name = "PersonalisedMobilePainDiary"

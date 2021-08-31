@@ -1,0 +1,54 @@
+﻿@model FIT5032_HotelBooking.Models.Hotel
+
+@{
+    ViewBag.Title = "Map";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Reference: https://docs.mapbox.com/mapbox-gl-js/example/setstyle/ -->
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+<h2>Map</h2>
+<div id='menu'>
+    <input id='streets-v10' type='radio' name='rtoggle' value='streets' checked='checked'>
+    <label for='streets'>streets</label>
+    <input id='light-v10' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark-v10' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+    <label for='outdoors'>outdoors</label>
+    <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+</div>
+<div id="map" style="height:300px"></div>
+<table>
+
+    <tr class="coordinates">
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td class="address" hidden>
+            @Html.DisplayFor(model => model.Address)
+        </td>
+        <td class="description" hidden>
+            @Html.DisplayFor(model => model.Description)
+        </td>
+        <td class="latitude" hidden>
+            @Html.DisplayFor(model => model.Latitude)
+        </td>
+        <td class="longitude" hidden>
+            @Html.DisplayFor(model => model.Longitude)
+        </td>
+    </tr>
+
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+}
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

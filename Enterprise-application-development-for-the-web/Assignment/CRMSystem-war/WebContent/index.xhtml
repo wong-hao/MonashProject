@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>Homepage</title>
+	</h:head> 
+	<body> 
+		<h2>Role based Authentication:</h2>
+		<br/>
+		Role1: <h:outputLink value="faces/admin/index.xhtml">Admin</h:outputLink>
+		<br/>
+		<p> </p>
+		
+		Role2: <h:outputLink value="faces/user/index.xhtml">Normal User</h:outputLink>
+		<br/>
+		<br/>
+		<br/>
+		<p> </p>
+		<p> </p>
+		
+   		 <h2>Web Services Facelet Client</h2>
+   		 
+		 <f:view>
+		 <h:form>
+		 <p>Input Keyword to get the time now: <h:message for="name" /></p>
+		 <h:inputText id="name" label="Name" size="32" value="#{webServiceBean.name}" required="true"
+		requiredMessage="You must enter a Date"></h:inputText>
+		 <h:commandButton id="submit" value="Submit" action="#{webServiceBean.setWebServiceClient}" />
+		 </h:form>
+		 </f:view>
+		 <p>View The <a href="webresources/greeting">Time</a></p>
+		 
+	</body> 
+</html>

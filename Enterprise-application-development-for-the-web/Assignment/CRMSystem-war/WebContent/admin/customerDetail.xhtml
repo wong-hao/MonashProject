@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>#{titleController.pageTitle}</title>
+</h:head>
+<body>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">#{titleController.pageTitle} - View
+				Customer</div>
+		</div>
+
+		<h:form id="MyForm">
+			<table class="table table-bordered ">
+				<tr>
+					<td width="150" valign="top">Id:</td>
+
+					<td valign="bottom"><h:outputLabel id="Id">#{customerController.customer.customerId}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Address:</td>
+
+					<td valign="bottom"><h:outputLabel id="Address">#{customerController.customer.address}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Company Name:</td>
+
+					<td valign="bottom"><h:outputLabel id="CompanyName">#{customerController.customer.companyName}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Office Phone:</td>
+
+					<td valign="bottom"><h:outputLabel id="OfficePhone">
+                                #{customerController.customer.officephone}                               
+						</h:outputLabel></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Register Date:</td>
+
+					<td valign="bottom"><h:outputLabel id="RegisterDate">#{customerController.customer.registerDate}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">ABN:</td>
+
+					<td valign="bottom"><h:outputLabel id="ABN">#{customerController.customer.aBN}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Office Email:</td>
+
+					<td valign="bottom"><h:outputLabel id="OfficeEmail">#{customerController.customer.email}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">CEO:</td>
+
+					<td valign="bottom"><h:outputLabel id="CEO">#{customerController.customer.CEO}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Organisation:</td>
+
+					<td valign="bottom"><h:outputLabel id="Organisation">#{customerController.customer.organisation.typeName}</h:outputLabel>
+					</td>
+				</tr>
+
+			</table>
+
+			<table class="table table-bordered table-striped">
+				<!-- For each contact in customerContact ArrayList... -->
+				<tr>
+					<td><h:outputLabel id="customerContactId"
+							value="customerContactId" /></td>
+					<td><h:outputLabel id="contactName" value="Contact Name" /></td>
+					<td><h:outputLabel id="contactPhone" value="Contact Phone" /></td>
+
+				</tr>
+				
+                 
+				<ui:repeat id="Myrepeat"
+					value="#{customerController.customer.customerContacts}"
+					var="customerContact" varStatus="status">
+
+					<tr>
+						<td><h:outputText id="customerContactId"
+								value="#{customerController.customer.customerContacts.get(status.index).customerContactId}" /></td>
+
+						<td><h:outputText id="contactName"
+								value="#{customerController.customer.customerContacts.get(status.index).contactName}" /></td>
+
+						<td><h:outputText id="contactPhone"
+								value="#{customerController.customer.customerContacts.get(status.index).contactPhone}"></h:outputText></td>
+
+						
+					</tr>
+				</ui:repeat>
+			</table>
+			
+			
+
+			
+
+
+
+			<h:link id="close" value="Close" outcome="index.xhtml"
+				class="btn btn-primary" />
+
+		</h:form>
+	</div>
+
+</body>
+</html>

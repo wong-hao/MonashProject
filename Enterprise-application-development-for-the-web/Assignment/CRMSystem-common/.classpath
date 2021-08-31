@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.glassfish.tools.lib.system">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/commonj.sdo-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/derby.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/derbyclient.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/derbyclient-10.2.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/derbynet.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/eclipselink-2.5.2-M1.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/glassfish-oracle-jdbc-driver-packages.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/javaee-api-7.0.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/javax.persistence-2.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/JEE_Library/org.eclipse.persistence.jpa.jpql-2.5.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

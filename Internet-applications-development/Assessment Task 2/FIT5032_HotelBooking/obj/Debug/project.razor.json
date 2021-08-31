@@ -1,0 +1,19 @@
+{
+  "FilePath": "e:\\Microsoft Visual Studio\\Repository\\Assessment Task 2\\Model first\\FIT5032_HotelBooking\\FIT5032_HotelBooking.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

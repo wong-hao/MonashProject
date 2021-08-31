@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOn="Pain Chart"
+        android:textOff="Steps Chart"
+        android:showText="true"/>
+
+    <Button
+        android:id="@+id/Button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose the starting date" />
+
+    <Button
+        android:id="@+id/Button9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose the Ending date" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pcCharts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>#{titleController.pageTitle}</title>
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">#{titleController.pageTitle} - Edit
+				CustomerContact</div>
+		</div>
+
+		<h:form id="MyForm">
+			<table class="table table-bordered ">
+
+				<tr>
+					<td width="150" valign="top">Id:</td>
+
+					<td valign="bottom"><h:outputLabel id="Id">#{customerContactController.customerContact.customerContactId}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Contact name:</td> the value below is
+					for display
+					<td valign="bottom"><h:inputText id="ContactName"
+							value="#{customerContactController.customerContact.contactName}"
+							binding="#{ContactName}" required="true"
+							validatorMessage="Please enter a valid Contact Name."
+							requiredMessage="Please enter a Contact Name. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Contact Phone:</td>
+
+					<td valign="bottom"><h:inputText id="ContactPhone"
+							value="#{customerContactController.customerContact.contactPhone}"
+							required="true"
+							validatorMessage="Please enter a valid Contact Phone"
+							requiredMessage="Please enterContact Phone. "></h:inputText></td>
+				</tr>
+
+				<tr>
+					<td width="100" valign="top">Contact Email:</td>
+
+					<td valign="bottom"><h:inputText id="contactEmail"
+							value="#{customerContactController.customerContact.contactEmail}"
+							required="true" validatorMessage="Please enter an email"
+							requiredMessage="Please enter an email. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Position:</td>
+
+					<td valign="bottom"><h:inputText id="Position"
+							value="#{customerContactController.customerContact.position}"
+							required="true" validatorMessage="Please enter the position"
+							requiredMessage="Please enter a position "></h:inputText></td>
+				</tr>
+				
+				<tr>
+					<td width="100" valign="top">Gender:</td>
+
+					<td valign="bottom"><h:inputText id="Gender"
+							value="#{customerContactController.customerContact.gender}"
+							required="true" validatorMessage="Please enter the gender"
+							requiredMessage="Please enter the gender. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">CustomerId:</td>
+
+					<td valign="bottom"><h:inputText id="CustomerId"
+							value="#{customerContactController.customerContact.customer.customerId}"
+							required="true"
+							validatorMessage="Please enter the correct CustomerId"
+							requiredMessage="Please enter a CustomerId. "></h:inputText></td>
+				</tr>
+
+
+			</table>
+
+			<h:commandButton id="save" value="Save"
+				action="#{customerContactManagedBean.editCustomerContact(customerContactController.customerContact)}"
+				class="btn btn-primary">
+				<f:param name="customerContactIndex"
+					value="#{customerContactController.customerContactIndex+1}" />
+			</h:commandButton>
+			<h:link id="close" value="Close" outcome="index.xhtml"
+				class="btn btn-primary" />
+		</h:form>
+	</div>
+</h:body>
+</html>
+
+

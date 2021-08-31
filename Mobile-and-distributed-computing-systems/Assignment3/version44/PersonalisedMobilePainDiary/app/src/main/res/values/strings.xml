@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PersonalisedMobilePainDiary</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign UP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoiaGFvd29uZzE5OTciLCJhIjoiY2tvOXNlaXZ6MDM1MTJ1c2F6bXJmbzdmeCJ9.eXGnKiBcuAwqdbOMmLo-TQ</string>
+
+</resources>

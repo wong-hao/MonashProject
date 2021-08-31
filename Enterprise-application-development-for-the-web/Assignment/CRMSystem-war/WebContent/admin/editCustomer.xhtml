@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>#{titleController.pageTitle}</title>
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">#{titleController.pageTitle} -
+				Edit Customer</div>
+		</div>
+
+		<h:form id="MyForm">
+			<table class="table table-bordered ">
+
+				<tr>
+					<td width="150" valign="top">Id:</td>
+
+					<td valign="bottom"><h:outputLabel id="Id">#{customerController.customer.customerId}</h:outputLabel>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">StreetNumber:</td> 
+					<td valign="bottom"><h:inputText id="streetNumber"
+							value="#{customerController.customer.address.streetNumber}"
+							required="true"
+							validatorMessage="Please enter a valid Address."
+							requiredMessage="Please enter an Address. "></h:inputText>
+					</td>
+				</tr>
+				
+								<tr>
+					<td width="100" valign="top">StreetAddress:</td> 
+					<td valign="bottom"><h:inputText id="streetAddress"
+							value="#{customerController.customer.address.streetAddress}"
+							required="true"
+							validatorMessage="Please enter a valid Address."
+							requiredMessage="Please enter an Address. "></h:inputText>
+					</td>
+				</tr>
+				
+								<tr>
+					<td width="100" valign="top">Suburb:</td> 
+					<td valign="bottom"><h:inputText id="suburb"
+							value="#{customerController.customer.address.suburb}"
+							required="true"
+							validatorMessage="Please enter a valid Address."
+							requiredMessage="Please enter an Address. "></h:inputText>
+					</td>
+				</tr>
+				
+								<tr>
+					<td width="100" valign="top">Postcode:</td> 
+					<td valign="bottom"><h:inputText id="postcode"
+							value="#{customerController.customer.address.postcode}"
+							required="true"
+							validatorMessage="Please enter a valid Address."
+							requiredMessage="Please enter an Address. "></h:inputText>
+					</td>
+				</tr>
+				
+								<tr>
+					<td width="100" valign="top">State:</td> 
+					<td valign="bottom"><h:inputText id="state"
+							value="#{customerController.customer.address.state}"
+							required="true"
+							validatorMessage="Please enter a valid Address."
+							requiredMessage="Please enter an Address. "></h:inputText>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="100" valign="top">Company Name:</td>
+
+					<td valign="bottom"><h:inputText id="CompanyName"
+							value="#{customerController.customer.companyName}"
+							required="true"
+							validatorMessage="Please enter a valid Company Name"
+							requiredMessage="Please enter Company Name. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Office Phone:</td>
+
+					<td valign="bottom"><h:inputText id="OfficePhone"
+							value="#{customerController.customer.officephone}" required="true"
+							validatorMessage="Please enter a Office Phone number that has digits less than 10 and more than 0 "
+							requiredMessage="Please enter an Office Phone number. ">							
+						</h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Register Date:</td>
+
+					<td valign="bottom"><h:inputText id="RegisterDate"
+							value="#{customerController.customer.registerDate}" required="true"
+							validatorMessage="Please enter the date as YYYY-MM-DD"
+							requiredMessage="Please enter date as YYYY-MM-DD. "></h:inputText>
+																
+							</td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">ABN:</td>
+
+					<td valign="bottom"><h:inputText id="ABN"
+							value="#{customerController.customer.aBN}" required="true"
+							validatorMessage="Please enter the ABN only containing number"
+							requiredMessage="Please enter an ABN. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">Office Email:</td>
+
+					<td valign="bottom"><h:inputText id="OfficeEmail"
+							value="#{customerController.customer.email}" required="true"
+							validatorMessage="Please enter the email with the correct format"
+							requiredMessage="Please enter a email. "></h:inputText></td>
+				</tr>
+				<tr>
+					<td width="100" valign="top">CEO:</td>
+
+					<td valign="bottom"><h:inputText id="CEO"
+							value="#{customerController.customer.CEO}" required="true"
+							validatorMessage="Please enter the correct CEO name"
+							requiredMessage="Please enter the CEO name. "></h:inputText></td>
+				</tr>
+                    <tr>
+							<td><h:outputLabel value="Organisation Type:" for="organisation" /></td>
+							<td><h:selectOneMenu id="organisation"
+									value="#{customerController.customer.organisation}" converter="organisation">
+									<f:selectItem itemValue="#{null}" itemLabel="--select--" />
+									<f:selectItems value="#{customerManagedBean.allOrganisation}"
+										var="c" itemLabel="#{c.typeName}" itemValue="#{c}" />
+								</h:selectOneMenu></td>
+						</tr>
+						
+						<tr>
+							<td><h:outputLabel value="User:" for="user" /></td>
+							<td><h:selectOneMenu id="user"
+									value="#{customerController.customer.user}" converter="user">
+									<f:selectItem itemValue="#{null}" itemLabel="--select--" />
+									<f:selectItems value="#{customerManagedBean.allUsers}"
+										var="c" itemLabel="#{c.username}" itemValue="#{c}" />
+								</h:selectOneMenu></td>
+						</tr>
+
+			</table>
+
+			<h:commandButton id="save" value="Save"
+				action="#{customerManagedBean.editCustomer(customerController.customer)}"
+				class="btn btn-primary">
+				<f:param name="customerIndex"
+					value="#{customerController.customerIndex+1}" />
+			</h:commandButton>
+			<h:link id="close" value="Close" outcome="index.xhtml"
+				class="btn btn-primary" />
+		</h:form>
+	</div>
+</h:body>
+</html>
+

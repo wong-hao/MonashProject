@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+        <title>Edit User</title> 
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-brand">
+                   Edit User
+                </div>
+            </div>
+<h:form id="MyForm">
+                <table class="table table-bordered ">
+
+                    <tr>
+                        <td width ="150" valign="top">Id:</td>
+                        
+                        <td valign="bottom">
+                            <h:outputLabel id = "Id" >#{adminUserController.user.userId}</h:outputLabel>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width ="150" valign="top">User Name:</td>
+                        
+                        <td valign="bottom">
+                            <h:outputLabel id = "name" >#{adminUserController.user.username}</h:outputLabel>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width ="100" valign="top">password: </td>
+                        
+                        <td valign="bottom">
+                            <h:inputText id = "password" value="#{adminUserController.password}"  required="true"
+                                         validatorMessage="Length of Password must be between 5-20, Contains at least 1 digit,lower case,uppercase"
+                                                 requiredMessage="Please enter password">
+                                                 
+                                                  <f:validateRegex  pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20})"/>
+                                                 </h:inputText>    
+                        </td>
+                    </tr>
+                    
+                    
+                </table>
+                 <h:commandButton id="save" value="Save" action="#{customerManagedBean.editUser(adminUserController.user,adminUserController.password)}"  class="btn btn-primary" >
+                    <f:param name="userID" value="#{adminUserController.userId+1}"/>
+                </h:commandButton>
+
+                <h:link id="close" value="Close" outcome="/admin/manageUser" class="btn btn-primary" >
+   
+                </h:link>
+            </h:form>
+            </div>
+    </h:body>
+</html>
+

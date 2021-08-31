@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "116558887793",
+    "project_id": "assignment3-8b7f1",
+    "storage_bucket": "assignment3-8b7f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116558887793:android:bce824f2c00a5704f414d0",
+        "android_client_info": {
+          "package_name": "com.example.PersonalisedMobilePainDiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116558887793-mglil5k097n3gn9s1758slt8mtjulflo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.PersonalisedMobilePainDiary",
+            "certificate_hash": "1ef99002622f5f706c19debd76f46cb40c6adc2b"
+          }
+        },
+        {
+          "client_id": "116558887793-mfaqkngtrejjbu316s7mhdrji189l8q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAdLIWmhx7uYXuhQN-JSbzsAHDVZtdNvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116558887793-mfaqkngtrejjbu316s7mhdrji189l8q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
