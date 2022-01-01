@@ -1,0 +1,7 @@
+#!E:\JetBrains\apps\PyCharm-P\pythonProject\netcat-0.0.1a0\venv\Scripts\python.exe
+# EASY-INSTALL-DEV-SCRIPT: 'netcat==0.0.1a0','netcat'
+__requires__ = 'netcat==0.0.1a0'
+__import__('pkg_resources').require('netcat==0.0.1a0')
+__file__ = 'E:\\JetBrains\\apps\\PyCharm-P\\pythonProject\\netcat-0.0.1a0\\bin\\netcat'
+with open(__file__) as f:
+    exec(compile(f.read(), __file__, 'exec'))
